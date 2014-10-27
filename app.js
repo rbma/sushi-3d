@@ -60,7 +60,7 @@ function init() {
 	document.body.appendChild( container );
 
 	camera = new THREE.PerspectiveCamera( 50, window.innerWidth / window.innerHeight, 1, 3000 );
-	camera.position.z = 50
+	camera.position.z = 20
 
 	scene = new THREE.Scene();
 
@@ -68,7 +68,7 @@ function init() {
 
 	sprite = THREE.ImageUtils.loadTexture('textures/sprites/2.png');
 
-	for ( i = 0; i < 500; i ++ ) {
+	for ( i = 0; i < 250; i ++ ) {
 
 		var vertex = new THREE.Vector3();
 		vertex.x = 2000 * Math.random() - 1000;
@@ -81,7 +81,7 @@ function init() {
 	}
 
 
-	material = new THREE.PointCloudMaterial( { size: 85, map: sprite,  transparent: true } );
+	material = new THREE.PointCloudMaterial( { size: 150, map: sprite,  transparent: true } );
 	
 
 	particles = new THREE.PointCloud( geometry, material );
@@ -108,8 +108,8 @@ function init() {
 
 function render() {
 
-	camera.position.x += ( mouseX - camera.position.x ) * 0.05;
-	camera.position.y += ( - mouseY - camera.position.y ) * 0.05;
+	camera.position.x += ( mouseX - camera.position.x ) * 0.02;
+	camera.position.y += ( - mouseY - camera.position.y ) * 0.02;
 
 	camera.lookAt( scene.position );
 
