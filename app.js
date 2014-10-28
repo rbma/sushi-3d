@@ -28,6 +28,20 @@ function onDocumentTouchStart( event ) {
 
 }
 
+function supportsWebGL(){
+	var canvas = document.createElement( 'canvas' );
+	var webgl = false;
+
+	try{
+		webgl = !!( canvas.getContext( 'webgl' ) || canvas.getContext( 'experimental-webgl' ) );
+	}
+	catch(e){
+
+	}
+	return webgl;
+}
+
+
 function onDocumentTouchMove( event ) {
 
 	if ( event.touches.length === 1 ) {
@@ -125,6 +139,9 @@ function animate() {
 }
 
 
-init();
-animate();
+if (supportsWebGL() === true){
+	init();
+	animate();
+}
+
 
