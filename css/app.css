@@ -5,4 +5,10 @@ html {
 body {
   width: 100%;
   height: 100%;
-  background: transparent; }
+  max-height: 100%;
+  overflow: hidden;
+  margin: 0;
+  background: transparent;
+  background: url(../img/sushi.jpg) no-repeat center center;
+  background-position: fixed;
+  background-size: cover; }
